@@ -50,6 +50,17 @@ INSTALLED_APPS = [
     
 ]
 
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/5.1/howto/static-files/
+
+STATIC_URL = 'static/'
+
+
+# Optional: collect all static files into one folder (e.g. for deployment)
+STATICFILES_DIRS = [
+    BASE_DIR / 'property_mgmt_backend' / 'static',
+]
+
 # Authentication settings for DRF
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
@@ -88,16 +99,19 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'property_mgmt.wsgi.application'
 
-
-# Database
-# https://docs.djangoproject.com/en/5.1/ref/settings/#databases
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'property_management_system',
+        'USER': 'gwiternz',
+        'PASSWORD': '@#93Gwiternz29#@',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
+
+
+
 
 
 # Password validation
@@ -141,3 +155,4 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+ALLOWED_HOSTS = ['*']

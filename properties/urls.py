@@ -56,3 +56,9 @@ urlpatterns = [
     path('rent-payments/<int:pk>/', RentPaymentRetrieveView.as_view(), name='rent-payment-detail'),  # ✅ Add this
 ]
 
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('', views.home, name='home'),
+]

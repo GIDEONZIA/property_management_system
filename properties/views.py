@@ -67,3 +67,8 @@ class RentPaymentRetrieveView(generics.RetrieveAPIView):
     queryset = RentPayment.objects.all() # type: ignore
     serializer_class = RentPaymentSerializer # type: ignore
     permission_classes = [IsAuthenticated]
+
+from django.shortcuts import render
+
+def home(request):
+    return render(request, 'index.html')
