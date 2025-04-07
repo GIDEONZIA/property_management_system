@@ -33,15 +33,7 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('transaction/', include('transaction.urls')),
-]
-
-from django.urls import include
-
-urlpatterns = [
-    # Other app routes...
-    path('admin/', admin.site.urls),  
-    path('api/', include('bills.urls')),  # Add this line
+    path('transactions/', include('transactions.urls')),
 ]
 
 

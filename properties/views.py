@@ -1,22 +1,6 @@
 from rest_framework import generics
 from rest_framework.permissions import IsAuthenticated
-from django.shortcuts import get_object_or_404
-from .models import Property, Tenant, Lease, RentPayment  # Add RentPayment here
-from .serializers import PropertySerializer, RentPaymentSerializer
-
-# List all properties or create a new one
-class PropertyListCreateView(generics.ListCreateAPIView):
-    queryset = Property.objects.all()
-    serializer_class = PropertySerializer
-
-# Retrieve, update, or delete a specific property
-class PropertyRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Property.objects.all()
-    serializer_class = PropertySerializer
-
-from rest_framework import generics
-from rest_framework.permissions import IsAuthenticated
-from .models import Property, Tenant, Lease
+from .models import Property, Tenant, Lease, RentPayment
 from .serializers import PropertySerializer, TenantSerializer, LeaseSerializer, RentPaymentSerializer
 
 # Property views
@@ -53,22 +37,17 @@ class LeaseRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = [IsAuthenticated]
     
 # RentPayment views
-from rest_framework import generics
-from rest_framework.permissions import IsAuthenticated
-from .models import RentPayment
-from .serializers import RentPaymentSerializer
-
 class RentPaymentListCreateView(generics.ListCreateAPIView):
-    queryset = RentPayment.objects.all() # type: ignore
-    serializer_class = RentPaymentSerializer # type: ignore
+    queryset = RentPayment.objects.all()
+    serializer_class = RentPaymentSerializer
     permission_classes = [IsAuthenticated]
 
 class RentPaymentRetrieveView(generics.RetrieveAPIView):
-    queryset = RentPayment.objects.all() # type: ignore
-    serializer_class = RentPaymentSerializer # type: ignore
+    queryset = RentPayment.objects.all()
+    serializer_class = RentPaymentSerializer
     permission_classes = [IsAuthenticated]
 
+# Home view for testing purposes
 from django.shortcuts import render
-
 def home(request):
     return render(request, 'index.html')

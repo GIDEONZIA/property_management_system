@@ -37,18 +37,23 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'bills',  # Bill Management App
+   
     
-    
+     # Custom apps
+    'properties',  # Property Management App
+    'transactions', # Transaction Management App
     # Third-party apps
     'rest_framework',  # Django REST Framework
     'rest_framework_simplejwt', # JWT Authentication
     
-    # Custom apps
-    'properties',  # Property Management App
-    'transaction'
+   
     
 ]
+
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/5.1/howto/static-files/
+
+STATIC_URL = 'static/'
 
 
 # Optional: collect all static files into one folder (e.g. for deployment)

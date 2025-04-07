@@ -4,11 +4,6 @@ from .models import Property, Tenant, Lease, RentPayment  # Add RentPayment here
 class PropertySerializer(serializers.ModelSerializer):
     class Meta:
         model = Property
-        fields = '__all__'  # Includes all model fields
-
-class PropertySerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Property
         fields = '__all__'
 
 class TenantSerializer(serializers.ModelSerializer):
